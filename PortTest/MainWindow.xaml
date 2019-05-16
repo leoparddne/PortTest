@@ -1,0 +1,34 @@
+﻿<Window x:Class="PortTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PortTest"
+        mc:Ignorable="d"
+        Title="PortScan" Height="450" Width="800">
+    <Grid>
+        <Menu>
+            <MenuItem Header="About" FontSize="15" Name="About" Click="About_Click"/>
+        </Menu>
+        <StackPanel Margin="20">
+            <WrapPanel>
+                <Label FontSize="15" >开始ip</Label>
+                <TextBox Width="300" Name="startIP"  FontSize="15" VerticalAlignment="Center"></TextBox>
+                <Label FontSize="15">开始端口</Label>
+                <TextBox Width="300" Name="startPort" PreviewTextInput="Number_PreviewTextInput"  FontSize="15" VerticalAlignment="Center"></TextBox>
+            </WrapPanel>
+            <WrapPanel Margin="0 10">
+                <Label FontSize="15">结束ip</Label>
+                <TextBox Width="300" Name="endIP" GotFocus="endIP_GotFocus"  FontSize="15" VerticalAlignment="Center"></TextBox>
+                <Label FontSize="15">结束端口</Label>
+                <TextBox Width="300" Name="endPort" PreviewTextInput="Number_PreviewTextInput" GotFocus="endPort_GotFocus"  FontSize="15" VerticalAlignment="Center"></TextBox>
+            </WrapPanel>
+            <WrapPanel>
+                <Label FontSize="15">超时时长(ms)</Label>
+                <TextBox Name="timeOut" PreviewTextInput="Number_PreviewTextInput" FontSize="15" VerticalAlignment="Center" Width="252">2000</TextBox>
+            </WrapPanel>
+            <Button Click="Btn_Test" Width="200" Height="54" Margin="276,15">开始测试</Button>
+            <ListView Name="resultListView" Height="184"></ListView>
+        </StackPanel>
+    </Grid>
+</Window>
